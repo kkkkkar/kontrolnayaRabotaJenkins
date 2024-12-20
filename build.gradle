@@ -58,6 +58,11 @@ jacocoTestReport {
     }
 }
 
-javadoc {
-    destinationDir = file("${buildDir}/docs/javadoc")
+def archivesDirPath = layout.buildDirectory.dir('archives')
+
+tasks.register('packageClasses', Zip) {
+    archiveAppendix = "classes"
+    destinationDirectory = archivesDirPath
+
+    from compileJava
 }
