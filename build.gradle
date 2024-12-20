@@ -58,3 +58,6 @@ jacocoTestReport {
     }
 }
 
+javadoc {
+    destinationDir = file("${buildDir}/docs/javadoc")
+}
